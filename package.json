@@ -20,6 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "jest --json --outputFile=jest-report.json",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,5 +40,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx|js|jsx)$": "ts-jest"
+    },
+    "testEnvironment": "jsdom",
+    "coverageThreshold": {
+      "global": {
+        "lines": "30",
+        "statements": "30",
+        "branches": "30",
+        "functions": "30"
+      }
+    }
   }
 }
