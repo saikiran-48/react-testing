@@ -28,7 +28,7 @@ jobs:
       - name: install dependencies
         run: yarn install
       - name: testing
-        run: yarn test:ci
+        run: yarn test
       - run: ls
       - name: Jest coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2.0.6
