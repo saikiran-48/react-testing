@@ -10,29 +10,19 @@ on:
 jobs:
   install-and-test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - run: pwd
-      - run: ls
       - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          working-directory: ./
-      - run: export YARN_ENABLE_IMMUTABLE_INSTALLS=true
-      - run: ls
       - name: install dependencies
-        run: yarn install
+        run: yarn ci
       - name: testing
         run: yarn test:ci
-      - run: ls
       - name: Jest coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2.0.6
         with:
-          working-directory: ./aqm/packages/react-client
           github-token: ${{ secrets.SECRET_TOKEN }}
           annotations: none
