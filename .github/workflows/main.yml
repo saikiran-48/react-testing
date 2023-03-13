@@ -22,7 +22,7 @@ jobs:
       - name: testing
         run: yarn test:ci
       - name: Jest coverage report
-        uses: ArtiomTr/jest-coverage-report-action@v2.2.1
+        uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.SECRET_TOKEN }}
           annotations: none
