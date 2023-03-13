@@ -26,3 +26,5 @@ jobs:
         with:
           github-token: ${{ secrets.SECRET_TOKEN }}
           annotations: none
+          base-coverage-file: ./jest-report.json
+          coverage-file: ./jest-report.json
